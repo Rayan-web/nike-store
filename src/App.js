@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navbar from "./Compontens/Navbar";
+import FirstPage from "./Compontens/Silder/FirstPage";
+import Items from "./Compontens/Items";
+import Login from "./Compontens/account/login";
+import Nopage from "./Compontens/nopage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Compontens/home";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-Tajawal  space-y-10 ">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Nopage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
